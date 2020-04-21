@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %}Ведомость{% endblock %}
+{% block content %}
+<h2>Ведомость</h2>
+<h3>&nbsp;</h3>
+<h3>Группа: {{ groupsubject.group__name }}</h3>
+<h3>Предмет: {{ groupsubject.subject__name }}</h3>
+<h3>Преподаватель: {{ groupsubject.lecturer__surname }} {{ groupsubject.lecturer__name }} {{ groupsubject.lecturer__patronymic }}</h3>
+<h3>Форма сдачи: {{ groupsubject.exam_test }}</h3>
+<hr>
+{% if exammark_list %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="7%" scope="col">Номер</th>
+    <th width="15%" scope="col">Зачетная книжка </th>
+    <th width="17%" scope="col">Фамилия</th>
+    <th width="13%" scope="col">Имя</th>
+    <th width="15%" scope="col">Отчество</th>
+    <th width="15%" scope="col">Оценка</th>
+    <th width="21%" scope="col">Дата</th>
+  </tr>
+  {% for exam_mark in exammark_list %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ exam_mark.student__number }}</td>
+    <td>{{ exam_mark.student__surname }}</td>
+    <td>{{ exam_mark.student__name }}</td>
+    <td>{{ exam_mark.student__patronymic }}</td>
+    <td>{{ exam_mark.mark__name }}</td>
+    <td>{{ exam_mark.date|date:"Y-m-d" }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<h3>Оценок пока нет!</h3>
+{% endif %}
+<p><a href="{% url 'group_subject_list' %}">На программу обучения</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

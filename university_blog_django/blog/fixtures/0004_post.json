@@ -1,0 +1,38 @@
+[
+  {
+    "model": "blog.Post",
+    "fields": {
+      "name": "ассистент"
+    }
+  },
+  {
+    "model": "blog.Post",
+    "fields": {
+      "name": "доцент"
+    }
+  },
+  {
+    "model": "blog.Post",
+    "fields": {
+      "name": "преподаватель"
+    }
+  },
+  {
+    "model": "blog.Post",
+    "fields": {
+      "name": "профессор"
+    }
+  },
+  {
+    "model": "blog.Post",
+    "fields": {
+      "name": "старший преподаватель"
+    }
+  },
+  {
+    "model": "blog.Post",
+    "fields": {
+      "name": "заведующий кафедрой"
+    }
+  }
+]

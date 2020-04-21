@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+{% block title %}Результаты сессии{% endblock %}
+{% block content %}
+<h1>Результаты сессии</h1>
+<h3>Планируемые показатели по группам</h3>
+<hr>
+{% if plan %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th scope="col">Номер</th>
+    <th scope="col">Группа</th>
+    <th scope="col">Форма сдачи</th>
+    <th scope="col">Количество предметов</th>
+    <th scope="col">Максимальный балл</th>
+  </tr>
+  {% load get_type %}
+  {% for group in plan %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ group.group__name }}</td>
+    <td>{{ group.exam_test }}</td>
+    <td>{{ group.count_subject }}</td>
+    <td>{{ group.max_ball }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+<hr>
+<h3>Фактические результаты сдачи сессии  студентами</h3>
+<hr>
+{% if fact %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="10%" scope="col">Номер </th>
+    <th width="10%" scope="col">Группа </th>
+    <th width="10%" scope="col">Номер зачетной книжки </th>
+    <th width="10%" scope="col">Студент</th>
+    <th width="20%" scope="col">Форма сдачи </th> 
+    <th width="15%" scope="col">Количество оценок </th>
+    <th width="15%" scope="col">Минимальная оценка</th>
+    <th width="15%" scope="col">Суммарный балл</th>
+  </tr>
+  {% for student in fact %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ student.student__group__name }}</td>
+    <td>{{ student.student__number }}</td>
+    <td>{{ student.student }}</td>
+    <td>{{ student.group_subject__exam_test }}</td>
+    <td>{{ student.count_marks }}</td>
+    <td>{{ student.min_mark }}</td>
+    <td>{{ student.sum_mark }}</td>
+  </tr>
+ {% endfor %}
+</table>
+{% endif %}
+<hr>
+<h3>Подведение итогов сдачи сессии  студентами</h3>
+<hr>
+{% if fact %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="10%" scope="col">Номер </th>
+    <th width="10%" scope="col">Группа </th>
+    <th width="10%" scope="col">Номер зачетной книжки </th>
+    <th width="10%" scope="col">Студент</th>
+    <th width="20%" scope="col">Форма сдачи </th> 
+    <th width="15%" scope="col">Количество оценок </th>
+    <th width="15%" scope="col">Минимальная оценка</th>
+    <th width="15%" scope="col">Суммарный балл</th>
+    <th width="15%" scope="col">Итог </th>
+  </tr>
+  {% for student in fact %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ student.student__group__name }}</td>
+    <td>{{ student.student__number }}</td>
+    <td>{{ student.student }}</td>
+    <td>{{ student.group_subject__exam_test }}</td>
+    <td>{{ student.count_marks }}</td>
+    <td>{{ student.min_mark }}</td>
+    <td>{{ student.sum_mark }}</td>
+    <td>{{ student.total }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+<hr>
+<h3>Определение стипендии</h3>
+<hr>
+{% if fact %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="10%" scope="col">Номер </th>
+    <th width="10%" scope="col">Группа </th>
+    <th width="10%" scope="col">Студент</th>        
+    <th width="15%" scope="col">Стипендия, в %</th>
+  </tr>
+  {% for student in uniq_students %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ student.student__group__name }}</td>
+    <td>{{ student.student }}</td>
+    <td>{{ student.grant }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

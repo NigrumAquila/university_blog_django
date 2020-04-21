@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block title %}Полный список преподавателей УТиИТ{% endblock %}
+{% block content %}
+<h1>Полный список преподавателей УТиИТ</h1>
+<h3>Поиск:</h3>
+<table border="0" cellspacing="2" cellpadding="1">
+  <tr class="tr-nohover">
+    <th width="153px" scope="col">Фамилия </th>
+    <th width="153px" scope="col">Имя</th>
+    <th width="153px" scope="col">Отчество</th>
+    <th width="153px" scope="col">Должность</th>
+    <th width="153px" scope="col">Кафедра</th>
+  </tr>
+</table>    
+<form method="get" autocomplete="off">
+  <input name="surname" type="text" class="border-bottom" value="{{ request.GET.surname }}" size="13">    
+  <input name="name" type="text" class="border-bottom" value="{{ request.GET.name }}"size="13" >
+  <input name="patronymic" type="text" class="border-bottom" value="{{ request.GET.patronymic }}"size="13">
+  <input name="post" type="text" class="border-bottom" value="{{ request.GET.post }}"size="13">
+  <input name="faculty" type="text" class="border-bottom" value="{{ request.GET.faculty }}"size="13"> 
+  <input type="submit" name="" value="Найти" id="Submit">    
+</form>
+<form method="get">
+  <input name="surname" type="hidden" value="">
+  <input name="name" type="hidden" value="">
+  <input name="patronymic" type="hidden" value="">
+  <input name="post" type="hidden" value="">
+  <input name="faculty" type="hidden" value="">
+  <input type="submit" name="" value="Все" id="Submit" style="margin-top: 10px;">  
+</form
+<p>&nbsp;</p>
+<hr>
+{% if lecturer_list %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="11%" scope="col">Номер</th>
+    <th width="18%" scope="col">Фамилия </th>
+    <th width="18%" scope="col">Имя</th>
+    <th width="18%" scope="col">Отчество</th>
+    <th width="18%" scope="col">Должность</th>
+    <th width="18%" scope="col">Кафедра</th>
+  </tr>
+  {% for lecturer in lecturer_list %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ lecturer.surname }}</td>
+    <td>{{ lecturer.name }}</td>
+    <td>{{ lecturer.patronymic }}</td>
+    <td>{{ lecturer.post__name }}</td>
+    <td>{{ lecturer.faculty__abbreviation }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<h3>преподавателей пока нет!</h3>
+{% endif %}
+<p><a href="{% url 'faculty_list' %}">На список кафедр</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

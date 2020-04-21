@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}Кафедры УТиИТ{% endblock %}
+{% block content %}
+<h1>Кафедры УТиИТ</h1>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+{% if faculty_list %}
+{% for faculty in faculty_list %}
+<div class="fullnote">
+  <h2>
+    <a href="{% url 'faculty_detail' pk=faculty.pk %}">{{ faculty.name }} ({{ faculty.abbreviation }})</a>
+  </h2>
+</div>
+{% endfor %}
+<p>Кафедры с 1 по {{ faculty_list.count }} 
+{% else %}
+<h3>Кафедр пока нет!</h3>
+{% endif %}
+<p><a href="{% url 'group_list' %}">На список групп</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

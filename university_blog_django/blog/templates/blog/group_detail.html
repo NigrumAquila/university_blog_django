@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %}Список студентов группы{% endblock %}
+{% block content %}
+<h1>Список студентов группы</h1>
+<p>&nbsp;</p>
+<div class="fullnote">
+  <h2>{{ group.name }}</h2>
+</div>
+<p>&nbsp;</p>
+<hr>
+{% if student_list %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="11%" scope="col">Номер</th>
+    <th width="17%" scope="col">Зачетная книжка </th>
+    <th width="26%" scope="col">Фамилия</th>
+    <th width="9%" scope="col">Имя</th>
+    <th width="16%" scope="col">Отчество</th>
+    <th width="4%" scope="col">Пол</th>
+    <th width="17%" scope="col">День рождения</th>
+  </tr>
+  {% for student in student_list %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ student.number }}</td>
+    <td>{{ student.surname }}</td>
+    <td>{{ student.name }}</td>
+    <td>{{ student.patronymic }}</td>
+    <td>{{ student.gender }}</td>
+    <td>{{ student.birthday|date:"Y-m-d" }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<h3>Студентов в данной группе  пока нет!</h3>
+{% endif %}
+<p><a href="{% url 'group_list' %}">На список групп</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

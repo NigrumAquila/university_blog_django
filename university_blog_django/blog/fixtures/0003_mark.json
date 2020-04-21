@@ -1,0 +1,44 @@
+[
+  {
+    "model": "blog.Mark",
+    "fields": {
+      "name": "не зачтено",
+      "value": 0
+    }
+  },
+  {
+    "model": "blog.Mark",
+    "fields": {
+      "name": "зачтено",
+      "value": 1
+    }
+  },
+  {
+    "model": "blog.Mark",
+    "fields": {
+      "name": "неудовлетворительно",
+      "value": 2
+    }
+  },
+  {
+    "model": "blog.Mark",
+    "fields": {
+      "name": "удовлетворительно",
+      "value": 3
+    }
+  },
+  {
+    "model": "blog.Mark",
+    "fields": {
+      "name": "хорошо",
+      "value": 4
+    }
+  },
+  {
+    "model": "blog.Mark",
+    "fields": {
+      "name": "отлично",
+      "value": 5
+    }
+  }
+]

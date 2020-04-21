@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+{% block title %}Полный список студентов УТиИТ{% endblock %}
+{% block content %}
+<h1>Полный список студентов УТиИТ</h1>
+<h3>Поиск:</h3>
+<table border="0" cellspacing="2" cellpadding="1">
+  <tr class="tr-nohover">
+    <th width="153px" scope="col">Группа</th>
+    <th width="153px" scope="col">Зачетная книжка</th>
+    <th width="153px" scope="col">Фамилия </th>
+    <th width="153px" scope="col">Имя</th>
+    <th width="153px" scope="col">Отчество</th>
+    <th width="153px" scope="col">Пол</th>
+    <th width="153px" scope="col">День рождения</th>
+  </tr>
+</table>    
+ <form method="get" autocomplete="off">
+    <input name="group" type="text" class="border-bottom" value="{{ request.GET.group }}" size="13">    
+    <input name="number" type="text" class="border-bottom" value="{{ request.GET.number }}"size="13">
+    <input name="surname" type="text" class="border-bottom" value="{{ request.GET.surname }}"size="13">
+    <input name="name" type="text" class="border-bottom" value="{{ request.GET.name }}"size="13" maxlength="30">
+    <input name="patronymic" type="text" class="border-bottom" value="{{ request.GET.patronymic }}"size="13"> 
+    <input name="gender" type="text" class="border-bottom" value="{{ request.GET.gender }}"size="13"> 
+    <input name="birthday" type="text" class="border-bottom" value="{{ request.GET.birthday }}"size="13"> 
+    <input type="submit" name="" value="Найти" id="Submit">    
+</form>
+<form method="get">
+  <input name="group" type="hidden" value="">
+  <input name="number" type="hidden" value="">
+  <input name="surname" type="hidden" value="">
+  <input name="name" type="hidden" value="">
+  <input name="patronymic" type="hidden" value="">
+  <input name="gender" type="hidden" value="">
+  <input name="birthday" type="hidden" value="">
+  <input type="submit" name="" value="Все" id="Submit" style="margin-top: 10px;">
+</form>
+<p>&nbsp;</p>
+<hr>
+{% if student_list %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="1%" scope="col">Номер</th>
+    <th width="8%" scope="col">Группа</th>
+    <th width="10%" scope="col">Зачетная книжка</th>
+    <th width="22%" scope="col">Фамилия </th>
+    <th width="15%" scope="col">Имя</th>
+    <th width="24%" scope="col">Отчество</th>
+    <th width="5%" scope="col">Пол</th>
+    <th width="15%" scope="col">День рождения</th>
+  </tr>
+  {% for student in student_list %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ student.group__name }}</td>
+    <td>{{ student.number }}</td>
+    <td>{{ student.surname }}</td>
+    <td>{{ student.name }}</td>
+    <td>{{ student.patronymic }}</td>
+    <td>{{ student.gender }}</td>
+    <td>{{ student.birthday|date:"Y-m-d" }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<h3>Студентов пока нет!</h3>
+{% endif %}
+<p><a href="{% url 'group_list' %}">На список групп</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

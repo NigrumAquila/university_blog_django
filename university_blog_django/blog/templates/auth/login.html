@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+<h2 align="center">Вход на сайт "Обучение студентов УТиИТ"</h2>
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+<p>Авторизация посетителя:</p>
+<form method="POST" autocomplete="off">
+	{% csrf_token %}
+	<p>Имя:
+		<input type="text" name="username" class="border-bottom" size="20" maxlength="20">
+	</p>
+	<p>Пароль:
+		<input type="password" name="password" class="border-bottom" size="20" maxlength="20">
+	</p>
+	<p>
+		<input type="submit" id="Submit" value="Войти">
+	</p>
+</form>
+<a href="{% url 'index'  %}">На главную страницу</a>
+{% endblock %}

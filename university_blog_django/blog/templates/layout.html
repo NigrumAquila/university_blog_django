@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="csrf-token" content="{{ csrf_token }}">
+        {% load static %}
+        <link href="{% static 'favicon.ico' %}" type="image/x-icon" rel="icon" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"><!--[if lt IE 9]>
+        <script src="../https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+        <script>
+        </script>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>

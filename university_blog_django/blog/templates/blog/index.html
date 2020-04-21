@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}УТиИТ при ИрГУПС{% endblock %}
+{% block content %}
+{% load has_group %}
+<h1>Иркутский государственный университет путей сообщения</h1>
+<h2>Факультет "Управление на транспорте и информационные технологии"</h2>
+<p>Здравствуйте, уважаемые посетители блога! </p>
+<p>Здесь публикуются сведения о кафедрах, преподавателях, студентах и процессе обучения в институте.</p>
+<p>Читайте на здоровье!</p>
+<hr>
+<p align="center"> 
+  {% if not request.user.is_authenticated %}
+  <a href="{% url 'login' %}">Вход</a>
+  {% else %}
+  <a href="{% url 'logout' %}">Выход</a>
+  {% if request.user|has_group:"manager" or request.user.is_superuser %}
+  | <a href="{% url 'admin:index' %}">Администрирование</a>
+  {% endif %}
+  {% endif %}
+</p>
+<hr>
+<p align="center">  | 
+  <a href="{% url 'faculty_list' %}">Кафедры</a> | 
+  <a href="{% url 'lecturer_list' %}">Преподаватели</a> | 
+  <a href="{% url 'subject_list' %}">Предметы</a> | 
+</p>
+<hr>
+<p align="center"> | 
+  <a href="{% url 'group_list' %}">Группы</a> | 
+  <a href="{% url 'student_list' %}">Студенты</a> | 
+  <a href="{% url 'group_subject_list' %}">Программа обучения</a> | 
+  <a href="{% url 'results' %}">Результаты сессии</a> | 
+</p>
+<hr>
+{% endblock %}

@@ -1,0 +1,58 @@
+[
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "математика",
+      "hour": 56
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "информатика",
+      "hour": 94
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "физика",
+      "hour": 120
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "история",
+      "hour": 72
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "ЭВМ",
+      "hour": 36
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "английский",
+      "hour": 82
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "базы данных",
+      "hour": 110
+    }
+  },
+  {
+    "model": "blog.Subject",
+    "fields": {
+      "name": "компьютерные сети",
+      "hour": 96
+    }
+  }
+]

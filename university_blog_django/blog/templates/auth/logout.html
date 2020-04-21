@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block title %}Выход{% endblock %}
+{% block content %}
+<h2 align="center">Успешное завершение сеанса работы посетителя с сайтом "Обучение студентов УТиИТ"</h2>
+<p><a href="{% url 'login' %}">Войти в систему снова</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

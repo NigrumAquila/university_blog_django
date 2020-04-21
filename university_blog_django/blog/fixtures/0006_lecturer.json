@@ -1,0 +1,132 @@
+[
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Петров",
+      "name": "Иван",
+      "patronymic": "Сергеевич",
+      "post_id": 2,
+      "faculty_id": 1
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Сергеев",
+      "name": "Игорь",
+      "patronymic": "Павлович",
+      "post_id": 1,
+      "faculty_id": 4
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Антонова",
+      "name": "Татьяна",
+      "patronymic": "Сергеевна",
+      "post_id": 3,
+      "faculty_id": 2
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Иванов",
+      "name": "Сергей",
+      "patronymic": "Васильевич",
+      "post_id": 4,
+      "faculty_id": 1
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Климова",
+      "name": "Ольга",
+      "patronymic": "Владимировна",
+      "post_id": 1,
+      "faculty_id": 3
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Карелин",
+      "name": "Андрей",
+      "patronymic": "Михайлович",
+      "post_id": 2,
+      "faculty_id": 1
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Федоров",
+      "name": "Виктор",
+      "patronymic": "Федорович",
+      "post_id": 2,
+      "faculty_id": 4
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Степанов",
+      "name": "Илья",
+      "patronymic": "Иванович",
+      "post_id": 5,
+      "faculty_id": 2
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Тимофеев",
+      "name": "Иван",
+      "patronymic": "Сергеевич",
+      "post_id": 3,
+      "faculty_id": 3
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Симонов",
+      "name": "Иван",
+      "patronymic": "Сергеевич",
+      "post_id": 4,
+      "faculty_id": 4
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Рощина",
+      "name": "Татьяна",
+      "patronymic": "Сергеевна",
+      "post_id": 2,
+      "faculty_id": 4
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Вербицкая",
+      "name": "Елена",
+      "patronymic": "Петровна",
+      "post_id": 2,
+      "faculty_id": 1
+    }
+  },
+  {
+    "model": "blog.Lecturer",
+    "fields": {
+      "surname": "Решетник",
+      "name": "Татьяна",
+      "patronymic": "Сергеевна",
+      "post_id": 2,
+      "faculty_id": 3
+    }
+  }
+]

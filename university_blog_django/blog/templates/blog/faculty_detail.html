@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}Список преподавателей кафедры{% endblock %}
+{% block content %}
+<h1>Список преподавателей кафедры</h1>
+<p>&nbsp;</p>
+<div class="fullnote">
+  <h2>{{faculty.name}} ({{ faculty.abbreviation}})</h2>
+</div>
+<p>&nbsp;</p>
+<hr>
+{% if lecturer_list %}
+<table width="100%"  border="1" cellspacing="2" cellpadding="1" class="center">
+  <tr>
+    <th width="11%" scope="col">Номер</th>
+    <th width="22.5%" scope="col">Фамилия </th>
+    <th width="22.5%" scope="col">Имя</th>
+    <th width="22.5%" scope="col">Отчество</th>
+    <th width="22.5%" scope="col">Должность</th>
+  </tr>
+  {% for lecturer in lecturer_list %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ lecturer.surname }}</td>
+    <td>{{ lecturer.name }}</td>
+    <td>{{ lecturer.patronymic }}</td>
+    <td>{{ lecturer.post__name }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<h3>Преподавателей на данной кафедре пока нет!</h3>
+{% endif %}
+<p><a href="{% url 'faculty_list' %}">На список кафедр</a></p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

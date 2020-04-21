@@ -1,0 +1,38 @@
+[
+  {
+    "model": "blog.Group",
+    "fields": {
+      "name": "ИС-09-01"
+    }
+  },
+  {
+    "model": "blog.Group",
+    "fields": {
+      "name": "ИС-09-02"
+    }
+  },
+  {
+    "model": "blog.Group",
+    "fields": {
+      "name": "ИС-10-01"
+    }
+  },
+  {
+    "model": "blog.Group",
+    "fields": {
+      "name": "ИС-10-02"
+    }
+  },
+  {
+    "model": "blog.Group",
+    "fields": {
+      "name": "ПО-10-01"
+    }
+  },
+  {
+    "model": "blog.Group",
+    "fields": {
+      "name": "ПО-10-02"
+    }
+  }
+]

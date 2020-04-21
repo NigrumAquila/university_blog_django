@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block title %}Предметы УТиИТ{% endblock %}
+{% block content %}
+<h1>Предметы УТиИТ</h1>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+{% if subject_list %}
+{% for subject in subject_list %}
+<div class="fullnote">
+	<h2>{{ subject.name|capfirst }}({{subject.hour}})</h2>
+</div>
+{% endfor %}
+<p>Предметы с 1 по {{ subject_list.count }}</p>
+{% endif %}
+<p>&nbsp;</p>
+<p><a href="{% url 'index' %}">На главную страницу</a></p>
+{% endblock %}

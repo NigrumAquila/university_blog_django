@@ -1,0 +1,30 @@
+[
+  {
+    "model": "blog.Faculty",
+    "fields": {
+      "abbreviation": "И",
+      "name": "Информатика"
+    }
+  },
+  {
+    "model": "blog.Faculty",
+    "fields": {
+      "abbreviation": "ИС",
+      "name": "Информационные системы"
+    }
+  },
+  {
+    "model": "blog.Faculty",
+    "fields": {
+      "abbreviation": "УЭР",
+      "name": "Управление эксплуатационной работой"
+    }
+  },
+  {
+    "model": "blog.Faculty",
+    "fields": {
+      "abbreviation": "ТиПМ",
+      "name": "Теоретическая и прикладная механика"
+    }
+  }
+]
