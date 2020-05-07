@@ -1,2 +1,2 @@
 # university_blog_django
-Python and Django. Easy CRUD:)
+Postgres and Django. Easy CRUD:)
